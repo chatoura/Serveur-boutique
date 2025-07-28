@@ -1,78 +1,68 @@
-# Serveur Boutique - API REST Node.js + Express + MongoDB
+ Serveur Boutique - API REST (Node.js + Express + MongoDB)
 
-Une API REST simple pour la gestion d’une boutique, construite avec **Node.js**, **Express.js** et **MongoDB**.  
+Une API REST simple pour la gestion d’une boutique, construite avec Node.js, Express.js et MongoDB.
 Elle permet de gérer les produits : ajout, lecture, mise à jour, suppression et gestion du stock.
+ Fonctionnalités
 
-##Fonctionnalités
+     Récupérer tous les produits
 
--  Récupérer tous les produits
--  Récupérer un produit par ID
--  Ajouter un nouveau produit
--  Mettre à jour les informations d’un produit (sauf stock)
--  Mettre à jour uniquement le `stockStatus`
--  Supprimer un produit
+   Récupérer un produit par ID
 
-## Technologies utilisées
+   Ajouter un nouveau produit
 
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/)
-- [Dotenv](https://www.npmjs.com/package/dotenv)
+   Mettre à jour les informations d’un produit (hors stock)
 
-## Installation
+   Mettre à jour uniquement le stockStatus
 
-### Prérequis
+    Supprimer un produit
 
-- Node.js
-- MongoDB local ou MongoDB Atlas
-- Postman (pour les tests)
+Technologies utilisées
 
-###  Étapes
+    Node.js
 
- **Cloner le projet**
+    Express.js
 
-```bash
+    MongoDB / Mongoose
+
+    Dotenv
+
+Installation
+🔸 1. Cloner le projet
+
 git clone https://github.com/chatoura/Serveur-boutique.git
 cd Serveur-boutique
- **on installe les dependances**
-"npm install" puis on
-**configurer l’environnement**
-en créeant un fichier .env à la racine du projet PORT=3000
-MONGODB_URI=mongodb://localhost:27017/boutique ensuite on
-**lance le serveur**
-node index.js qui sera disponible sur http://localhost:3000 .
 
+🔸 2. Installer les dépendances
 
-**Pour tester avec POSTMAN**
+npm install
 
-D'abord installer Postman puis le lancer ensuite créer une requête pour tester .
-GET http://localhost:3000/products
+🔸 3. Configurer l’environnement
 
- ### qui permet de récuperer la liste de tous les produits.
+Crée un fichier .env à la racine du projet avec le contenu suivant :
 
-GET hhtp://http://localhost:3000/products
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/boutique
 
-### qui permet de récuperer un produit par son ID.
-GET http://localhost:3000/products/68833656736de04b1289b03f
+🔸 4. Lancer le serveur
 
-### qui permet d'ajouter un nouvel produit.
-POST  http://localhost:3000/products
+node index.js
 
-###  qui permet de mettre à jour un produit excepté son status en stock.
-PATCH  http://localhost:3000/products/68833656736de04b1289b041
+L'API sera disponible sur :
+ http://localhost:3000
+ Tester l’API avec Postman
 
-### status qui permet de mettre à jour le status du produit en stock.
-PATCH http://localhost:3000/products/68833656736de04b1289b042
+Ouvre Postman et utilise les routes suivantes :
+Méthode	URL	Description
+GET	http://localhost:3000/products	Récupérer tous les produits
+GET	http://localhost:3000/products/:id	Récupérer un produit par son ID
+POST	http://localhost:3000/products	Ajouter un nouveau produit
+PATCH	http://localhost:3000/products/:id	Mettre à jour un produit (hors stock)
+PATCH	http://localhost:3000/products/:id/status	Mettre à jour le statut du stock
+DELETE	http://localhost:3000/products/:id	Supprimer un produit
 
-### qui permet de supprimer un produit. 
+    Après avoir renseigné l’URL et la méthode dans Postman, cliquer sur Send pour voir la réponse du serveur.
 
-DELETE  http://localhost:3000/products/68833656736de04b1289b03d
-
-une fois entrer la requete cliquer sur Send pour envoyer la requête.
-et vous verrez la réponse du serveur en dessous.
-
-## Structure du projet
+Structure du projet
 
 Serveur-boutique/
 ├── models/
@@ -80,5 +70,4 @@ Serveur-boutique/
 ├── .env
 ├── index.js
 ├── package.json
-
 
