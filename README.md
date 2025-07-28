@@ -35,11 +35,17 @@ Elle permet de gérer les produits : ajout, lecture, mise à jour, suppression e
 ```bash
 git clone https://github.com/chatoura/Serveur-boutique.git
 cd Serveur-boutique
-Aprés **on installe les dependances** "npm install" puis on **configurer l’environnement** en créeant un fichier .env à la racine du projet PORT=3000
-MONGODB_URI=mongodb://localhost:27017/boutique ensuite on **lance le serveur** : node index.js qui sera disponible sur http://localhost:3000 .
+ **on installe les dependances**
+"npm install" puis on
+**configurer l’environnement**
+en créeant un fichier .env à la racine du projet PORT=3000
+MONGODB_URI=mongodb://localhost:27017/boutique ensuite on
+**lance le serveur**
+node index.js qui sera disponible sur http://localhost:3000 .
 
 
 **Pour tester avec POSTMAN**
+
 D'abord installer Postman puis le lancer ensuite créer une requête pour tester .
 GET http://localhost:3000/products
 
