@@ -1,0 +1,21 @@
+GET http://localhost:3000/products
+
+ ### qui permet de récuperer la liste de tous les produits.
+
+GET hhtp://http://localhost:3000/products
+
+### qui permet de récuperer un produit par son ID.
+GET http://localhost:3000/products/68833656736de04b1289b03f
+
+### qui permet d'ajouter un nouvel produit.
+POST  http://localhost:3000/products
+
+###  qui permet de mettre à jour un produit excepté son status en stock.
+PATCH  http://localhost:3000/products/68833656736de04b1289b041
+
+### status qui permet de mettre à jour le status du produit en stock.
+PATCH http://localhost:3000/products/68833656736de04b1289b042
+
+### qui permet de supprimer un produit. 
+
+DELETE  http://localhost:3000/products/68833656736de04b1289b03d
